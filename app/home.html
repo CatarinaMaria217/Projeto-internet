@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projecto - organizador de links</title>
+    
+</head>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Verdana, sans-serif;
+    }
+
+
+    .cabeçalho {
+        flex: 1;
+        background: #002b4c; /* cor de fundo */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: #ffffff;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .menu_de_navegação {
+        flex: 1;
+        background: #3e4b55; /* cor de fundo */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: #ffffff;
+        text-align: center;
+        padding: 20px;
+        margin-top: 5px;
+    }
+
+    .container {
+        display: flex; 
+        width: 100%;
+        gap: 5px;
+        padding: 5px;
+    }
+
+    .conteúdo_secundário {
+        width: 320px;
+        background-color: rgb(167, 167, 167);
+        color: rgb(13, 10, 10);
+        text-align: center;
+        margin-left: 0; /* Garante que está bem à esquerda */
+    }
+
+    .conteudo-principal {
+        flex-grow: 1;
+        padding: 20px;
+        background-color: rgb(167, 167, 167);
+        color: rgb(13, 10, 10);
+        text-align: center;
+    }
+
+    .text-section h1 {
+        font-size: 2.5rem;
+        font-weight: bold;
+    }
+
+    footer {
+        background: #000000; /* Cor de fundo escura para contraste */
+        color: white; /* Texto branco para legibilidade */
+        text-align: center; /* Centraliza o texto */
+        padding: 15px 20px; /* Espaçamento interno */
+        font-size: 0.9rem; /* Tamanho de fonte ajustado */
+        position: relative; /* Mantém no final sem sobreposição */
+        width: 100%;
+    }
+
+    .footer-content {
+        max-width: 800px; /* Define uma largura máxima */
+        margin: 0 auto; /* Centraliza o conteúdo */
+    }
+
+    .footer-content p {
+        margin: 5px 0; /* Espaçamento entre os textos */
+    }
+
+</style>
+
+<body>
+
+    <header class="cabeçalho">
+        <div class="image-section"></div>
+        <div class="text-section">
+            <h1>BEM VINDO AO ORGANIZER!</h1>
+        </div>
+    </header>
+
+    <nav class="menu_de_navegação">
+        <div class="text-section1">
+            <p>Menu de navegação, alterar dps ideas: perfil, defenições, log out, links favoritos</p>
+        </div>
+    </nav>
+
+    <div class = "container">
+        <div class="conteúdo_secundário">
+            <div class="text-section2">
+                <p>Aqui poderíamos por pastas de links cada um com um tema escolhido pelo utilizador, esta caixa aumenta em largura conforme a necessidade ou mais tarde podemos alterar a altura dela para uma medida fixa</h1>
+            </div>
+        </div>
+
+        <div class="conteúdo principal">
+            <div class="text-section3">
+                <p>Pasta selecionada:""</h1>
+            </div>
+                <article class="post">
+                <p>Aqui os devidos links com foto da pasta selecionada, esta a mesma coisa</h1>
+                </article>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Verifica se o usuário está logado
+        if (localStorage.getItem("userLogged") !== "true") {
+            alert("Você precisa fazer login primeiro!");
+            window.location.href = "index.html"; // Redireciona para o login
+        }
+
+        // Função para deslogar
+        function logout() {
+            localStorage.removeItem("userLogged");
+            window.location.href = "index.html"; // Redireciona de volta para o login
+        }
+    </script>
+    
+
+    <footer>
+        <div class="footer-content">
+            <p>Programação para Internet 2024/2025 - Projeto
+            </p>
+            <p>ISCTE SINTRA - Tecnologias Digitais Economia e Sociedade</p>
+        </div>
+    </footer>
+</body>
+</html>
