@@ -162,14 +162,14 @@
             window.location.href = "index.html"; // Redireciona para o login
         }
 
-        // Função para deslogar
-        function logout() {
-            localStorage.removeItem("userLogged");
-            window.location.href = "index.html"; // Redireciona de volta para o login
-        }
-
         var username = localStorage.getItem("username");
         document.getElementById("nome-usuário").textContent = username;
+
+        function logout() {
+        localStorage.removeItem("userLogged");
+        localStorage.removeItem("username");  // Remove o nome de usuário ao deslogar
+        window.location.href = "index.html"; // Redireciona para a página de login
+        }
     </script>
     
 

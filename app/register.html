@@ -117,6 +117,10 @@
 
             // Registrando o novo usuário
             localStorage.setItem(newUser, newPass);
+            localStorage.setItem("username", newUser)
+            console.log("Usuário registrado: ", newUser);
+            console.log("Senha armazenada: ", newPass);
+            console.log("Chave 'username' no localStorage: ", localStorage.getItem("username"));
             alert("Registro bem-sucedido! Agora você pode fazer login.");
 
             // Redireciona para o login
