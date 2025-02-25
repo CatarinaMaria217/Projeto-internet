@@ -24,41 +24,43 @@
         height: 100vh;
     }
 
-    .image-section {
+    .cabeçalho {
         flex: 1;
-        background: url('https://i.ibb.co/1tJghZjw/IMG-2801.jpg') no-repeat center center;
-        background-size: cover;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 20px;
-        outline: 20px solid #ffffff;
-    }
-
-    .image-section img {
-        max-width: 20%;
-        height: auto;
-    }
-
-    .text-section {
-        flex: 1;
-        background: #ffffff; /* Cor amarela para destacar */
+        background: #002b4c; /* cor de funtp */
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        color: #333;
+        color: #ffffff;
         text-align: center;
         padding: 20px;
-        margin: 20px;
-        outline: 20px solid #07a53b;
     }
 
-    .text-section h1,
-    .text-section p {
-        margin-bottom: 5px; /* Mantém o título e a descrição juntos */
+    .menu_de_navegação {
+        flex: 1;
+        background: #3e4b55; /* cor de fundo */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: #ffffff;
+        text-align: center;
+        padding: 20px;
+        margin-top: 5px;
     }
 
+    .conteúdo_secundário {
+        flex: 1;
+        background: #3e4b55; /* cor de fundo */
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+        align-items: left;
+        color: #ffffff;
+        text-align: left;
+        padding: 20px;
+        margin-top: 15px;
+    }
 
     .text-section h1 {
         font-size: 2.5rem;
@@ -123,38 +125,39 @@
 </style>
 
 <body>
-    <div class="cabeçalho">
+    <header class="cabeçalho">
         <div class="image-section"></div>
         <div class="text-section">
             <h1>BEM VINDO AO ORGANIZER!</h1>
         </div>
-    </div>
+    </header>
 
-    <div class="menu de navegação">
-        <div class="text-section">
+    <nav class="menu_de_navegação">
+        <div class="text-section1">
             <p>Menu de navegação, alterar dps ideas: perfil, defenições, log out, links favoritos</h1>
         </div>
-    </div>
+    </nav>
 
+    <main class="container"
+        <aside class="conteúdo_secundário">
+            <div class="text-section2">
+                <p>Aqui poderíamos por pastas de links cada um com um tema escolhido pelo utilizador</h1>
+            </div>
+        </aside>
 
-    
-        <div class="lista-ordenada">
-            <dl>
-                <dt>PERSONALIDADE:</dt>
-                <dd>Teimosa</dd>
-                <dd>Brincalhona</dd>
-                <dd>Esperta</dd>
-                <dd>Desobediente</dd>
-            </dl>
-        </div>
-
-        <a href="https://www.petz.com.br/cachorro/racas/vira-lata/"  target="_blank">Os Vira Lata</a> 
-    </div>
-</div>
+        <section class="conteúdo principal">
+            <div class="text-section3">
+                <p>Pasta selecionada:""</h1>
+            </div>
+            <article class="post">
+                <p>Aqui os devidos links com foto da pasta selecionada</h1>
+                </article>
+        </section>
+    </main>
 
     <footer>
         <div class="footer-content">
-            <p>Programação para Internet 2024/2025 - Catarina Ferreira
+            <p>Programação para Internet 2024/2025 - Projeto
             </p>
             <p>ISCTE SINTRA - Tecnologias Digitais Economia e Sociedade</p>
         </div>
