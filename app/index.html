@@ -45,59 +45,31 @@
     }
 
     .container {
-        display: flex;
-        width: 80%;
-        margin: 20px auto;
+        display: flex; 
+        width: 100%;
+        gap: 5px;
+        padding: 5px;
     }
 
     .conteúdo_secundário {
-        width: 25%;
-        justify-content: center;
-        display: flex;
-        align-items: center;
-    }
-
-    .text-section2 {
-        width: 90%;
-        background-color: #fff;
-        padding: 20px;
+        width: 320px;
+        background-color: rgb(167, 167, 167);
+        color: rgb(13, 10, 10);
         text-align: center;
-        color: #000;
-        border: 2px solid #000;
+        margin-left: 0; /* Garante que está bem à esquerda */
     }
 
     .conteudo-principal {
-        width: 75%;
-        min-height: 250px;
+        flex-grow: 1;
         padding: 20px;
-        background-color: #eee;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border: 2px solid #000;
-    }
-
-    .post {
-        width: 80%;
-        padding: 20px;
-        background-color: #fff;
+        background-color: rgb(167, 167, 167);
+        color: rgb(13, 10, 10);
         text-align: center;
-        border: 2px solid #000;
     }
-
 
     .text-section h1 {
         font-size: 2.5rem;
         font-weight: bold;
-    }
-
-    .text-section p {
-        font-size: 1.2rem;
-        background: white;
-        padding: 10px 15px;
-        border-radius: 5px;
-        margin-top: 10px;
-        margin-bottom: 20px;
     }
 
     footer {
@@ -135,22 +107,24 @@
         </div>
     </nav>
 
-    <main class="container"
-        <aside class="conteúdo_secundário">
+    <div class = "container">
+        <div class="conteúdo_secundário">
             <div class="text-section2">
-                <p>Aqui poderíamos por pastas de links cada um com um tema escolhido pelo utilizador</h1>
+                <p>Aqui poderíamos por pastas de links cada um com um tema escolhido pelo utilizador, esta caixa aumenta em largura conforme a necessidade ou mais tarde podemos alterar a altura dela para uma medida fixa</h1>
             </div>
-        </aside>
+        </div>
 
-        <section class="conteúdo principal">
+        <div class="conteúdo principal">
             <div class="text-section3">
                 <p>Pasta selecionada:""</h1>
             </div>
-            <article class="post">
-                <p>Aqui os devidos links com foto da pasta selecionada</h1>
+                <article class="post">
+                <p>Aqui os devidos links com foto da pasta selecionada, esta a mesma coisa</h1>
                 </article>
-        </section>
-    </main>
+            </div>
+        </div>
+    </div>
+    
 
     <footer>
         <div class="footer-content">
