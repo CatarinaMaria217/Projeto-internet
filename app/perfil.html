@@ -125,6 +125,7 @@
                     var img = document.getElementById("foto-preview");
                     img.src = e.target.result;
                     img.style.display = "block"; // Torna a imagem visível
+                    localStorage.setItem('fotoPerfil', e.target.result);
                 };
 
                 reader.readAsDataURL(file); // Lê o arquivo e converte para um URL de dados
