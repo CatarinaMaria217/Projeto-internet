@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projecto - organizador de links</title>
+    
+</head>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, Helvetica, sans-serif
+    }
+
+
+    .cabeçalho {
+        height: 170px;
+        background: #002b4c; /* cor de fundo */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: #ffffff;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .menu_de_navegação {
+        flex: 1;
+        background: #3e4b55; /* cor de fundo */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: #ffffff;
+        text-align: center;
+        padding: 20px;
+        margin-top: 5px;
+    }
+
+    .imagens {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 50px
+    }
+
+    .imagens img {
+        width: 50px; /* Define tamanho da imagem */
+        height: 50px;
+        border-radius: 60%; /* Deixa a imagem redonda */
+    }
+
+    .imagens img:hover {
+        filter: brightness(1.5); /* Clareia a imagem */
+        box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.8); /* Adiciona um brilho ao redor */
+        cursor: pointer;
+    }
+
+</style>~
+
+<body>
+
+    <header class="cabeçalho">
+        <div class="image-section"></div>
+        <div class="text-section">
+            <h1>O seu perfil!</h1>
+            <p>Usuário: <span id="nome-usuário"></span></p>
+        </div>
+    </header>
+
+    <nav class="menu_de_navegação">
+        <div class= "imagens">
+            <a href="home.html">
+                <img src="https://cdn-icons-png.flaticon.com/512/25/25694.png" alt="Home">
+            </a>
+            <a href="defenições.html">
+                <img src="https://cdn-icons-png.flaticon.com/512/163/163272.png" alt="defenições">
+            </a>
+            <a href="index.html">
+                <img src="https://www.svgrepo.com/show/314895/sign-out-circle.svg" alt="logout">
+            </a>
+        </div>
+    </nav>
+
+    <div>
+        <strong>Foto de Perfil:</strong>
+        <input type="file" id="foto-perfil" accept="image/*">
+        <br><br>
+        <img id="foto-preview" src="" alt="Sua Foto de Perfil" style="max-width: 150px; max-height: 150px; border-radius: 50%; display: none;">
+    </div>
+    
+    <button onclick="salvarFoto()">Salvar Foto</button>
+
+    <script>
+        // Verifica se o usuário está logado
+        if (localStorage.getItem("userLogged") !== "true") {
+            alert("Você precisa fazer login primeiro!");
+            window.location.href = "index.html"; // Redireciona para o login
+        }
+
+        var username = localStorage.getItem("username");
+        document.getElementById("nome-usuário").textContent = username;
+
+        function logout() {
+        localStorage.removeItem("userLogged");
+        localStorage.removeItem("username");  // Remove o nome de usuário ao deslogar
+        window.location.href = "index.html"; // Redireciona para a página de login
+        }
+
+        document.getElementById("foto-perfil").addEventListener("change", function(event) {
+            var file = event.target.files[0]; // Obtém o arquivo escolhido
+
+            if (file) {
+                var reader = new FileReader(); // Cria um FileReader
+
+                reader.onload = function(e) {
+                    // Exibe a imagem carregada no elemento <img>
+                    var img = document.getElementById("foto-preview");
+                    img.src = e.target.result;
+                    img.style.display = "block"; // Torna a imagem visível
+                };
+
+                reader.readAsDataURL(file); // Lê o arquivo e converte para um URL de dados
+            }
+        });
+    </script>
+
+</body>
+</html>
