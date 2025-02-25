@@ -6,19 +6,88 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <style>
-        body { font-family: Arial, sans-serif; text-align: center; }
-        .login-container {
-            margin: 100px auto;
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background-color: #f4f4f4;
+        }
+
+        .cabeçalho {
+            background: #002b4c; /* cor de fundo */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #ffffff;
+            text-align: center;
             padding: 20px;
-            width: 300px;
+        }
+
+        .menu_de_navegação {
+            background: #3e4b55; /* cor de fundo */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px;
+            margin-top: 5px;
+        }
+
+        .login-container {
+            padding: 20px;
+            width: 100%;
+            max-width: 400px;
             border: 1px solid #ccc;
             border-radius: 10px;
             box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+            background-color: white;
+            margin: 50px auto 0 auto;
+            text-align: center;
         }
-        input, button { width: 100%; padding: 10px; margin: 5px 0; }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #002b4c;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #00233d;
+        }
+
     </style>
 </head>
 <body>
+
+    <header class="cabeçalho">
+        <div class="image-section"></div>
+        <div class="text-section">
+            <h1>BEM VINDO AO ORGANIZER!</h1>
+        </div>
+    </header>
+
+    <nav class="menu_de_navegação">
+        <div class="text-section1">
+            <p>Se já tiver registrado, faça o seu log in:</p>
+        </div>
+    </nav>
 
     <div class="login-container">
         <h2>Login</h2>
@@ -46,6 +115,5 @@
             }
         }
     </script>
-
 </body>
 </html>
