@@ -59,7 +59,7 @@
 
     .imagens img:hover {
         filter: brightness(1.5); /* Clareia a imagem */
-        box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8); /* Adiciona um brilho ao redor */
+        box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.8); /* Adiciona um brilho ao redor */
         cursor: pointer;
     }
 
@@ -119,6 +119,7 @@
         <div class="image-section"></div>
         <div class="text-section">
             <h1>BEM VINDO AO ORGANIZER!</h1>
+            <p>Bem-vindo, <span id="nome-usuário"></span>!</p>
         </div>
     </header>
 
@@ -166,6 +167,9 @@
             localStorage.removeItem("userLogged");
             window.location.href = "index.html"; // Redireciona de volta para o login
         }
+
+        var username = localStorage.getItem("username");
+        document.getElementById("nome-usuário").textContent = username;
     </script>
     
 
