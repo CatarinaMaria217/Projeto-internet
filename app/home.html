@@ -44,6 +44,18 @@
         margin-top: 5px;
     }
 
+    .imagems img {
+        width: 50px; /* Define tamanho da imagem */
+        height: 50px;
+        border-radius: 60%; /* Deixa a imagem redonda */
+    }
+
+    .imagems img:hover {
+        filter: brightness(1.5); /* Clareia a imagem */
+        box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8); /* Adiciona um brilho ao redor */
+        cursor: pointer;
+    }
+
     .container {
         display: flex; 
         width: 100%;
@@ -103,8 +115,16 @@
     </header>
 
     <nav class="menu_de_navegação">
-        <div class="text-section1">
-            <p>Menu de navegação, alterar dps ideas: perfil, defenições, log out, links favoritos</p>
+        <div class= "imagems">
+            <a href="perfil.html">
+                <img src="https://cdn-icons-png.flaticon.com/512/310/310818.png" alt="Perfil">
+            </a>
+            <a href="defenições.html">
+                <img src="https://cdn-icons-png.flaticon.com/512/163/163272.png" alt="defenições">
+            </a>
+            <a href="index.html">
+                <img src="https://www.svgrepo.com/show/314895/sign-out-circle.svg" alt="logout">
+            </a>
         </div>
     </nav>
 
