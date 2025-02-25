@@ -38,12 +38,20 @@
         align-items: center; /* Alinha o texto e a imagem no centro */
     }
 
+    .imagem-cabeçalho {
+        width: 150px; /* Largura fixa do container */
+        height: 150px; /* Altura fixa do container */
+        border-radius: 50%; /* Torna o container redondo */
+        overflow: hidden; /* Garante que a imagem não ultrapasse os limites do container */
+        display: flex; /* Para garantir que o conteúdo da imagem fique alinhado */
+        justify-content: center; /* Alinha a imagem no centro */
+        align-items: center; /* Alinha a imagem no centro */
+    }
+
     .imagem-cabeçalho img {
-        max-width: 150px;
-        max-height: 150px;
-        border-radius: 50%; /* Deixa a imagem redonda */
-        display: block;
-        margin-left: 20px;
+        width: 100%; /* A imagem ocupa 100% do tamanho do container */
+        height: 100%; /* A imagem ocupa 100% do tamanho do container */
+        object-fit: cover; /* Ajusta a imagem para preencher o círculo sem distorcer */
     }
 
     .menu_de_navegação {
@@ -137,7 +145,7 @@
             <p>Bem-vindo, <span id="nome-usuário"></span>!</p>
         </div>
         <div class="imagem-cabeçalho">
-            <img id="foto-perfil" src="" alt="Foto de Perfil" style="max-width: 150px; max-height: 150px; border-radius: 50%; display: none;"> 
+            <img id="foto-perfil" src="" alt="Foto de Perfil" style="max-width: 150px; max-height: 150px; border-radius: 50%; display: none; object-fit: cover;"> 
         </div>
     </header>
 
