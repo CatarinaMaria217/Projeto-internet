@@ -114,24 +114,41 @@
         window.location.href = "index.html"; // Redireciona para a página de login
         }
 
-        document.getElementById("foto-perfil").addEventListener("change", function(event) {
-            var file = event.target.files[0]; // Obtém o arquivo escolhido
+        const inputFile = document.getElementById('input-file');
+        const fotoHome = document.getElementById('foto-home');
 
+        // Função para carregar a imagem
+        function carregarImagem(event) {
+            const file = event.target.files[0];  // Pega o arquivo de imagem
             if (file) {
-                var reader = new FileReader(); // Cria um FileReader
+                const reader = new FileReader();
 
                 reader.onload = function(e) {
-                    // Exibe a imagem carregada no elemento <img>
-                    var img = document.getElementById("foto-preview");
-                    img.src = e.target.result;
-                    img.style.display = "block"; // Torna a imagem visível
-                    localStorage.setItem('fotoPerfil', e.target.result);
+                    const imagemURL = e.target.result;
+                    fotoHome.src = imagemURL;
+                    fotoHome.style.display = 'block';  // Exibe a imagem carregada
+
+                    // Armazenando a URL da imagem no localStorage
+                    localStorage.setItem('imagemPerfil', imagemURL);
                 };
 
-                reader.readAsDataURL(file); // Lê o arquivo e converte para um URL de dados
+                reader.readAsDataURL(file);  // Converte a imagem para uma URL de dados
             }
-        });
+        }   
+
+        // Verificar se já existe uma imagem armazenada ao carregar a página
+        window.onload = function() {
+            const imagemArmazenada = localStorage.getItem('imagemPerfil');
+            if (imagemArmazenada) {
+                fotoHome.src = imagemArmazenada;
+                fotoHome.style.display = 'block';  // Exibe a imagem armazenada
+            }
+        };
+
+        // Adicionando o evento para o input de arquivo
+        inputFile.addEventListener('change', carregarImagem);
     </script>
+    
 
 </body>
 </html>
