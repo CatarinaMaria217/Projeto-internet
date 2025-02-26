@@ -24,18 +24,11 @@
         background: #002b4c; /* cor de fundo */
         display: flex;
         flex-direction: row;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
         color: #ffffff;
         text-align: center;
         padding: 20px;
-    }
-
-    .text-section {
-        display: flex;
-        flex-direction: column; /* Alinha o texto e a imagem na horizontal */
-        justify-content: center; /* Espaço entre o texto e a imagem */
-        align-items: center; /* Alinha o texto e a imagem no centro */
     }
 
     .imagem-cabeçalho {
@@ -49,9 +42,14 @@
     }
 
     .imagem-cabeçalho img {
-        width: 100%; /* A imagem ocupa 100% do tamanho do container */
-        height: 100%; /* A imagem ocupa 100% do tamanho do container */
+        width: 50%; /* A imagem ocupa 100% do tamanho do container */
+        height: 50%; /* A imagem ocupa 100% do tamanho do container */
         object-fit: cover; /* Ajusta a imagem para preencher o círculo sem distorcer */
+    }
+
+    .texto-section {
+        flex-grow: 1; /* Permite que o texto ocupe o espaço restante */
+        text-align: center; /* Centraliza o texto */
     }
 
     .menu_de_navegação {
@@ -197,7 +195,7 @@
         window.location.href = "index.html"; // Redireciona para a página de login
         }
 
-        var fotoPerfil = localStorage.getItem("imagemPerfil");
+        var fotoPerfil = localStorage.getItem(`imagemPerfil_${username}`);
         if (fotoPerfil) {
             document.getElementById("foto-perfil").src = fotoPerfil;
             document.getElementById("foto-perfil").style.display = "block"; // Torna a foto visível

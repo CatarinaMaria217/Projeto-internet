@@ -129,7 +129,7 @@
                     fotoHome.style.display = 'block';  // Exibe a imagem carregada
 
                     // Armazenando a URL da imagem no localStorage
-                    localStorage.setItem('imagemPerfil', imagemURL);
+                    localStorage.setItem(`imagemPerfil_${username}`, imagemURL);
                 };
 
                 reader.readAsDataURL(file);  // Converte a imagem para uma URL de dados
@@ -138,7 +138,7 @@
 
         // Verificar se já existe uma imagem armazenada ao carregar a página
         window.onload = function() {
-            const imagemArmazenada = localStorage.getItem('imagemPerfil');
+            const imagemArmazenada = localStorage.getItem('imagemPerfil_${username}', imagemURL);
             if (imagemArmazenada) {
                 fotoHome.src = imagemArmazenada;
                 fotoHome.style.display = 'block';  // Exibe a imagem armazenada
