@@ -63,6 +63,31 @@
         cursor: pointer;
     }
 
+    .perfil-container {
+        margin-top: 70px;
+        top: 100px; /* Ajuste conforme a altura do seu cabeçalho */
+        left: 20px; /* Ajuste a margem esquerda conforme necessário */
+        padding: 10px;
+        margin-left: 50px;
+    }
+
+    .image-perfil {
+        margin: 20px;
+        width: 150px; /* Largura fixa do container */
+        height: 150px; /* Altura fixa do container */
+        border-radius: 50%; /* Torna o container redondo */
+        overflow: hidden; /* Garante que a imagem não ultrapasse os limites do container */
+        display: flex; /* Para garantir que o conteúdo da imagem fique alinhado */
+        justify-content: center; /* Alinha a imagem no centro */
+        align-items: center; /* Alinha a imagem no centro */
+    }
+
+    .image-perfil img {
+        width: 100%; /* A imagem ocupa 100% do tamanho do container */
+        height: 100%; /* A imagem ocupa 100% do tamanho do container */
+        object-fit: cover; /* Ajusta a imagem para preencher o círculo sem distorcer */
+    }
+
 </style>~
 
 <body>
@@ -89,14 +114,20 @@
         </div>
     </nav>
 
-    <div> 
-        <strong>Foto de Perfil:</strong>
+    <div class="perfil-container"> 
+        <strong>Escolher foto de Perfil:</strong>
+        <br><br>
         <input type="file" id="input-file" accept="image/*">
         <br><br>
-        <img id="foto-perfil" src="" alt="Sua Foto de Perfil" style="max-width: 150px; max-height: 150px; border-radius: 50%; display: none;">
+        <div class="image-perfil">
+            <img id="foto-perfil" src="" alt="Sua Foto de Perfil" style="max-width: 150px; max-height: 150px; border-radius: 50%; display: none;">
+        </div>
+        <label for="novo-nome">Alterar Nome de Usuário:</label>
+        <input type="text" id="novo-nome" placeholder="Digite seu nome">
+        <button id="salvar-nome">Salvar</button>
+        <p>Usuário: <span id="nome-usuario"></span></p>
     </div>
     
-    <button onclick="salvarFoto()">Salvar Foto</button>
 
     <script>
         // Verifica se o usuário está logado
@@ -147,6 +178,13 @@
 
         // Adicionando o evento para o input de arquivo
         inputFile.addEventListener('change', carregarImagem);
+
+        var fotoPerfil = localStorage.getItem(`imagemPerfil_${username}`);
+        if (fotoPerfil) {
+            document.getElementById("foto-perfil").src = fotoPerfil;
+            document.getElementById("foto-perfil").style.display = "block"; // Torna a foto visível
+        }
+
     </script>
     
 
