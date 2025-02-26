@@ -185,6 +185,33 @@
             document.getElementById("foto-perfil").style.display = "block"; // Torna a foto visível
         }
 
+        document.addEventListener("DOMContentLoaded", function () {
+        const nomeUsuarioSpan = document.getElementById("nome-usuário");
+        const nomeInput = document.getElementById("novo-nome");
+        const salvarBotao = document.getElementById("salvar-nome");
+
+        // Carregar nome salvo no LocalStorage
+        let nomeSalvo = localStorage.getItem("username");
+        if (nomeSalvo) {
+            nomeUsuarioSpan.textContent = nomeSalvo;
+        } else {
+            nomeUsuarioSpan.textContent = "Usuário Padrão"; // Nome inicial
+        }
+
+        // Evento para salvar novo nome
+        salvarBotao.addEventListener("click", function () {
+            let novoNome = nomeInput.value.trim();
+            if (novoNome !== "") {
+                localStorage.setItem("username", novoNome);
+                nomeUsuarioSpan.textContent = novoNome;
+                alert("Nome atualizado com sucesso!");
+                nomeInput.value = ""; // Limpa o campo
+            } else {
+                alert("Por favor, digite um nome válido!");
+            }
+        });
+    });
+
     </script>
     
 
