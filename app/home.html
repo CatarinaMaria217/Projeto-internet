@@ -23,12 +23,10 @@
         height: 170px;
         background: #002b4c; /* cor de fundo */
         display: flex;
-        flex-direction: row;
         justify-content: space-between;
         align-items: center;
         color: #ffffff;
-        text-align: center;
-        padding: 20px;
+        padding: 100px;
     }
 
     .imagem-cabeçalho {
@@ -48,8 +46,11 @@
     }
 
     .texto-section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         flex-grow: 1; /* Permite que o texto ocupe o espaço restante */
-        text-align: center; /* Centraliza o texto */
+        margin-left: 20px;
     }
 
     .menu_de_navegação {
@@ -137,7 +138,6 @@
 <body>
 
     <header class="cabeçalho">
-        <div class="image-section"></div>
         <div class="text-section">
             <h1>BEM VINDO AO ORGANIZER!</h1>
             <p>Bem-vindo, <span id="nome-usuário"></span>!</p>
