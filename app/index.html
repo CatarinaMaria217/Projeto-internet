@@ -61,11 +61,11 @@
 
     <div class="login-container">
         <h2>Login</h2>
-        <input type="text" id="username" placeholder="Usuário">
+        <input type="text" id="username" placeholder="Utilizador">
         <input type="password" id="password" placeholder="Senha">
         <button onclick="login()">Entrar</button>
         <p id="message" style="color: red;"></p>
-        <p>Ainda não tem uma conta? <a href="register.html">Registrar-se</a></p>
+        <p>Ainda não tem uma conta? <a href="register.html">Registar-se</a></p>
     </div>
 
     <script>
@@ -82,7 +82,7 @@
                 localStorage.setItem("username", user);
                 window.location.href = "home.html"; // Redireciona para a página de conteúdo
             } else {
-                document.getElementById("message").innerText = "Usuário ou senha incorretos!";
+                document.getElementById("message").innerText = "Utilizador ou senha incorretos!";
             }
         }
     </script>

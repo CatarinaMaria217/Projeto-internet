@@ -58,10 +58,12 @@
 <body>
 
     <div class="register-container">
-        <h2>Registrar</h2>
+        <h2>Registar</h2>
         <input type="text" id="newUsername" placeholder="Novo Usuário">
         <input type="password" id="newPassword" placeholder="Nova Senha">
-        <button onclick="register()">Registrar</button>
+        <button onclick="register()">Registar</button>
+        <p> <a href="index.html">Voltar para login</a></p>
+
         <p id="registerMessage" style="color: red;"></p>
     </div>
 
@@ -79,7 +81,7 @@
             // Verificando se o usuário já existe (salvo no localStorage)
             var storedUser = localStorage.getItem(newUser);
             if (storedUser) {
-                document.getElementById("registerMessage").innerText = "Usuário já existe!";
+                document.getElementById("registerMessage").innerText = "Utilizador já existe!";
                 return;
             }
 
