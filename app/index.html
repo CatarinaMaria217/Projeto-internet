@@ -77,7 +77,6 @@
             var storedPass = localStorage.getItem(user);
 
             if (storedPass && storedPass === pass) {
-                alert("Login bem-sucedido!");
                 localStorage.setItem("userLogged", "true");
                 localStorage.setItem("username", user);
                 window.location.href = "home.html"; // Redireciona para a página de conteúdo
