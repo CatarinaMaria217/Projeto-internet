@@ -15,107 +15,6 @@
     }
 
     body {
-        font-family: Arial, Helvetica, sans-serif
-    }
-
-
-    .cabeçalho {
-        height: 170px;
-        background: #002b4c; /* cor de fundo */
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        color: #ffffff;
-        padding: 100px;
-    }
-
-    .imagem-cabeçalho {
-        width: 200px; /* Largura fixa do container */
-        height: 200px; /* Altura fixa do container */
-        border-radius: 50%; /* Torna o container redondo */
-        overflow: hidden; /* Garante que a imagem não ultrapasse os limites do container */
-        display: flex; /* Para garantir que o conteúdo da imagem fique alinhado */
-        justify-content: center; /* Alinha a imagem no centro */
-        align-items: center; /* Alinha a imagem no centro */
-    }
-
-    .imagem-cabeçalho img {
-        width: 50%; /* A imagem ocupa 100% do tamanho do container */
-        height: 50%; /* A imagem ocupa 100% do tamanho do container */
-        object-fit: cover; /* Ajusta a imagem para preencher o círculo sem distorcer */
-        border: 5px solid white;
-    }
-
-    .texto-section {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        flex-grow: 1; /* Permite que o texto ocupe o espaço restante */
-        margin-left: 20px;
-    }
-
-    .menu_de_navegação {
-        flex: 1;
-        background: #3e4b55; /* cor de fundo */
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        color: #ffffff;
-        text-align: center;
-        padding: 20px;
-        margin-top: 5px;
-    }
-
-    .imagens {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 50px
-    }
-
-    .imagens img {
-        width: 50px; /* Define tamanho da imagem */
-        height: 50px;
-        border-radius: 60%;
-         /* Deixa a imagem redonda */
-    }
-
-    .imagens img:hover {
-        filter: invert(1); /* Inverte completamente as cores da imagem */
-        cursor: pointer;
-    }
-    
-
-    .container {
-        display: flex; 
-        width: 100%;
-        gap: 5px;
-        padding: 5px;
-    }
-
-    .conteúdo_secundário {
-        width: 320px;
-        background-color: rgb(167, 167, 167);
-        color: rgb(13, 10, 10);
-        text-align: center;
-        margin-left: 0; /* Garante que está bem à esquerda */
-    }
-
-    .conteudo-principal {
-        flex-grow: 1;
-        padding: 20px;
-        background-color: rgb(167, 167, 167);
-        color: rgb(13, 10, 10);
-        text-align: center;
-    }
-
-    .text-section h1 {
-        font-size: 2.5rem;
-        font-weight: bold;
-
-    }
-
     footer {
         background: #000000; /* Cor de fundo escura para contraste */
         color: white; /* Texto branco para legibilidade */
@@ -136,9 +35,9 @@
     }
 
 </style>
-
 <body>
 
+<<<<<<< Updated upstream
     <header class="cabeçalho">
         <div class="text-section">
             <h1>BEM VINDO AO ORGANIZER!</h1>
@@ -180,7 +79,52 @@
             </div>
         </div>
     </div>
+=======
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Navbar</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="perfil.html">Perfil</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="defenições.html">Defenições</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Log Out</a>
+              </li>
+          </div>
+        </div>
+      </nav>
 
+      <div class="container-fluid">
+        <div class="row">
+          <!-- Sidebar -->
+          <nav class="col-md-2 d-none d-md-block bg-light">
+            <div class="position-sticky pt-3">
+              <ul class="nav flex-column">
+                <li class="nav-item">
+                  <a class="nav-link active" href="#">Início</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Sobre</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Serviços</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Contato</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+>>>>>>> Stashed changes
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         // Verifica se o usuário está logado
         if (localStorage.getItem("userLogged") !== "true") {
@@ -207,11 +151,13 @@
     
 
     <footer>
+
         <div class="footer-content">
             <p>Programação para Internet 2024/2025 - Projeto
             </p>
             <p>ISCTE SINTRA - Tecnologias Digitais Economia e Sociedade</p>
         </div>
+
     </footer>
 </body>
 </html>
