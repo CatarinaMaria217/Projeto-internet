@@ -41,31 +41,22 @@
     </div>
   </nav>
 
-  <div class="row">
-    <div class="col-2">
-      <div id="simple-list-example" class="d-flex flex-column gap-2 simple-list-example-scrollspy text-center">
-        <h6><strong>Os teus Links:</strong></h6>
-        <a class="text-dark text-decoration-none" href="simple-list-item-1">Item 1</a>
-        <a class="text-dark text-decoration-none" href="simple-list-item-2">Item 2</a>
-        <a class="text-dark text-decoration-none" href="simple-list-item-3">Item 3</a>
-        <a class="text-dark text-decoration-none" href="simple-list-item-4">Item 4</a>
-        <a class="text-dark text-decoration-none"href="simple-list-item-5">Item 5</a>
-        <h6><a class="text-dark text-decoration-none" href="simple-list-item-5"><strong>Definições</strong></a></h6>
+  <div class="row" style="height: 100vh;">
+    <!-- Left column with a small separation from the navbar -->
+    <div class="col-2 d-flex" style="padding-top: 20px;"> <!-- Padding to create space from navbar -->
+      <!-- Centered Card -->
+      <div class="card" style="width: 18rem; margin-left: 10px;">
+        <div class="card-body">
+          <h5 class="card-title">Os teus Links:</h5>
+          <p class="card-text">Links em lista - ver dps</p>
+          <a href="#" class="btn btn-secondary">Defenições</a>
+        </div>
       </div>
     </div>
+  
+    <!-- Right column (content goes here) -->
     <div class="col-10">
-      <div data-bs-spy="scroll" data-bs-target="#simple-list-example" data-bs-offset="0" data-bs-smooth-scroll="true" class="scrollspy-example" tabindex="0">
-        <h4 id="simple-list-item-1">Item 1</h4>
-        <p>...</p>
-        <h4 id="simple-list-item-2">Item 2</h4>
-        <p>...</p>
-        <h4 id="simple-list-item-3">Item 3</h4>
-        <p>...</p>
-        <h4 id="simple-list-item-4">Item 4</h4>
-        <p>...</p>
-        <h4 id="simple-list-item-5">Item 5</h4>
-        <p>...</p>
-      </div>
+      <!-- Your content goes here -->
     </div>
   </div>
 
@@ -93,14 +84,6 @@
         }
 
     </script>
-    <footer>
 
-        <div class="footer-content">
-            <p>Programação para Internet 2024/2025 - Projeto
-            </p>
-            <p>ISCTE SINTRA - Tecnologias Digitais Economia e Sociedade</p>
-        </div>
-
-    </footer>
 </body>
 </html>
