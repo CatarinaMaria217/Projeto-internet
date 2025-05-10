@@ -41,22 +41,42 @@
     </div>
   </nav>
 
-  <div class="row" style="height: 100vh;">
+  <div class="row" style="height: calc(100vh - 66px); overflow: hidden">
     <!-- Left column with a small separation from the navbar -->
     <div class="col-2 d-flex" style="padding-top: 20px;"> <!-- Padding to create space from navbar -->
       <!-- Centered Card -->
       <div class="card" style="width: 18rem; margin-left: 10px;">
         <div class="card-body">
           <h5 class="card-title">Os teus Links:</h5>
-          <p class="card-text">Links em lista - ver dps</p>
+          <p class="card-text">Links em lista - ver dps; No carrousel organizar Nome Do Link + Descrição + Foto</p>
           <a href="#" class="btn btn-secondary">Defenições</a>
         </div>
       </div>
     </div>
   
     <!-- Right column (content goes here) -->
-    <div class="col-10">
-      <!-- Your content goes here -->
+    <div class="col-10" style="height: calc(100vh - 66px); overflow: hidden">
+      <div id="carouselExample" class="carousel slide" style="padding-top: 20px; margin-right: 10px;">
+        <div class="carousel-inner" >
+          <div class="carousel-item active">
+            <img src="https://static.significados.com.br/foto/da4f-cor-cinza-significados.jpg?width=1024" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="https://www.luematecidos.com.br/10570-large_default/tecido-two-way-liso-cinza-chumbo.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="https://static.vecteezy.com/ti/fotos-gratis/t2/36055693-ai-gerado-preto-fundo-com-agua-gotas-em-isto-foto.jpg" class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
     </div>
   </div>
 
