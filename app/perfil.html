@@ -64,7 +64,7 @@
                         Editar
                     </button>
 
-                    <div class="d-flex justify-content-center gap-3" style="padding-top: 250px;">
+                    <div class="position-absolute bottom-0 start-50 translate-middle-x mb-3 d-flex justify-content-center gap-3">
                         <a href="https://github.com/" target="_blank" class="text-dark"><i class="bi bi-github fs-4"></i></a>
                         <a href="https://getbootstrap.com" target="_blank" class="text-dark">
                             <i class="bi bi-bootstrap fs-4"></i>
@@ -115,38 +115,25 @@
                                     <div class="input-group mt-3">
                                         <label class="input-group-text" for="inputGroupFile01">Upload</label>
                                         <input type="file" accept="image/*" onchange="previewImage(this)" class="form-control" id="inputGroupFile01">
-                                        <img id="imagePreview" src="#" alt="Pré-visualização" class="img-fluid mt-2 d-none" style="max-height: 200px;">
                                     </div>
-                                    <div class="mt-4 text-center">
-                                        <button type="button" class="btn btn-orange">
-                                            <i class="bi bi-check-lg"></i>
-                                        </button>
-                                    </div>
+                                    <div class="text-center mt-3">
+                                        <img id="imagePreview" src="#" alt="Pré-visualização" class="img-fluid d-none" style="max-height: 200px;">
+                                    </div>
                                 </div>
                               
                                 <!-- Nome de utilizador Form -->
                                 <div id="formUsername" class="mt-3 d-none">
-                                    <input type="text" class="form-control" placeholder="Digite o nome de utilizador">
-                                    <div class="mt-4 text-center">
-                                        <button type="button" class="btn btn-orange">
-                                            <i class="bi bi-check-lg"></i>
-                                        </button>
-                                    </div>
+                                    <input type="text" class="form-control" placeholder="Digite o nome de utilizador" id="usernameInput">
                                 </div>
                               
                                 <!-- Descrição Form -->
                                 <div id="formDescricao" class="mt-3 d-none" style="margin-bottom:0;">
-                                    <textarea class="form-control" rows="3" placeholder="Digite a descrição"></textarea>
-                                    <div class="mt-4 text-center">
-                                        <button type="button" class="btn btn-orange">
-                                            <i class="bi bi-check-lg"></i>
-                                        </button>
-                                    </div>
+                                    <textarea class="form-control" rows="3" placeholder="Digite a descrição" id="descriptionInput"></textarea>
                                 </div>
                             </div>                  
                             <div class="modal-footer">
-                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                              <button type="button" class="btn btn-primary">Editar</button>                
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="cancelarBtn">Cancelar</button>
+                              <button type="button" class="btn btn-primary" id="editarBtn">Editar</button>                
                             </div>
                           </div>
                         </div>
@@ -155,7 +142,95 @@
             </div>
         </div>
 
-        
+    <script>
+      const editarBtn = document.getElementById('editarBtn');
+      const cancelarBtn = document.getElementById('cancelarBtn');
+
+      const usernameInput = document.getElementById('usernameInput');
+      const descriptionInput = document.getElementById('descriptionInput');
+      const imagePreview = document.getElementById('imagePreview');
+
+      const cardTitle = document.querySelector('.card-title');
+      const cardText = document.querySelector('.card-text');
+      const profileImage = document.getElementById('foto-perfil');
+
+      // Store original values for reset
+      let originalUsername = cardTitle.textContent;
+      let originalDescription = cardText.textContent;
+      let originalImageSrc = profileImage.src;
+
+      // Save changes
+      editarBtn.addEventListener('click', () => {
+        const newUsername = usernameInput.value.trim();
+        const newDescription = descriptionInput.value.trim();
+
+        if (newUsername) {
+          cardTitle.textContent = newUsername;
+          localStorage.setItem('username', newUsername);
+        }
+
+        if (newDescription) {
+          cardText.textContent = newDescription;
+          localStorage.setItem('description', newDescription);
+        }
+
+        if (!imagePreview.classList.contains('d-none')) {
+          profileImage.src = imagePreview.src;
+          localStorage.setItem('profileImage', imagePreview.src);
+        }
+
+        // Update original values
+        originalUsername = cardTitle.textContent;
+        originalDescription = cardText.textContent;
+        originalImageSrc = profileImage.src;
+
+        alert('Perfil atualizado com sucesso!');
+      });
+
+      // Reset changes
+      cancelarBtn.addEventListener('click', () => {
+        usernameInput.value = originalUsername;
+        descriptionInput.value = originalDescription;
+        imagePreview.src = originalImageSrc;
+        imagePreview.classList.add('d-none');
+      });
+
+      // Load saved data on page load
+      window.addEventListener('DOMContentLoaded', () => {
+        const savedUsername = localStorage.getItem('username');
+        const savedDescription = localStorage.getItem('description');
+        const savedImage = localStorage.getItem('profileImage');
+
+        if (savedUsername) {
+          cardTitle.textContent = savedUsername;
+          originalUsername = savedUsername;
+        }
+
+        if (savedDescription) {
+          cardText.textContent = savedDescription;
+          originalDescription = savedDescription;
+        }
+
+        if (savedImage) {
+          profileImage.src = savedImage;
+          originalImageSrc = savedImage;
+        }
+      });
+
+      // Preview uploaded image
+      function previewImage(input) {
+        const file = input.files[0];
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = function (e) {
+            imagePreview.src = e.target.result;
+            imagePreview.classList.remove('d-none');
+          };
+          reader.readAsDataURL(file);
+        }
+      }
+    </script>
+
         <!-- <script>
         document.getElementById('inputGroupFile01').addEventListener('change', function(event) {
             const preview = document.getElementById('imagePreview');
