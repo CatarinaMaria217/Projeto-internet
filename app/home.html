@@ -134,25 +134,32 @@
         <div class="accordion-item">
           <h2 class="accordion-header">
             <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
-              <span id="titleOne">Favorito #1</span>
+              <strong>
+                <span id="titleOne">Favorito #1</span>
+              </strong>
             </button>
           </h2>
           <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
             <div class="accordion-body">
-              <strong><i class="bi bi-star-fill text-warning me-2"></i>Nome Favorito/LINK.</strong> Descrição.
-              <i class="bi bi-pencil ms-2 text-primary" role="button" onclick="openModal('One')"></i>
+              <i class="fas fa-edit edit-icon" role="button" onclick="openModal('One')"></i>
+              <a id="linkTextOne" href="https://example.com">Nome Favorito/LINK.</a>
+              <p id="descTextOne">Descrição.</p>
             </div>
           </div>
         </div>
         <div class="accordion-item">
           <h2 class="accordion-header">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-              Favorito #2
+              <strong>
+                <span id="titleTwo">Favorito #2</span>
+              </strong>
             </button>
           </h2>
           <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
             <div class="accordion-body">
-              <strong><i class="bi bi-star-fill text-warning me-2"></i>Nome Favorito/LINK.</strong> Descrição.
+              <i class="fas fa-edit edit-icon" role="button" onclick="openModal('Two')"></i>
+              <a id="linkTextTwo" href="https://example.com">Nome Favorito/LINK.</a>
+              <p id="descTextTwo">Descrição.</p>
             </div>
           </div>
         </div>
@@ -246,9 +253,9 @@
     <script>
       function openModal(id) {
         document.getElementById('currentFavoritoId').value = id;
-        const title = document.getElementById(`title${id}`).textContent;
-        const link = document.getElementById(`linkText${id}`).href || '';
-        const desc = document.getElementById(`descText${id}`).textContent || '';
+        const title = document.getElementById(`title${id}`)?.textContent || '';
+        const link = document.getElementById(`linkText${id}`)?.href || '';
+        const desc = document.getElementById(`descText${id}`)?.textContent || '';
 
         document.getElementById('favoritoName').value = title;
         document.getElementById('favoritoLink').value = link;
