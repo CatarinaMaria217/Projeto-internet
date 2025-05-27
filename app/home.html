@@ -47,6 +47,25 @@
     .dark-mode a.btn:hover {
       background-color: #444;
     }
+
+        body.pink-mode {
+      background-color: #3e112c;
+      color: #ffffff;
+    }
+
+    .pink-mode .card {
+      background-color: #631348;
+      color: #ffffff;
+    }
+
+    .pink-mode a.btn {
+      background-color: #b05b96;
+      border-color: #c988b9;
+    }
+
+    .pink-mode a.btn:hover {
+      background-color: #c988b9;
+    }
 </style>
 
 <body>
@@ -518,6 +537,23 @@
       window.onload = function () {
         if (localStorage.getItem("dark-mode") === "true") {
           document.body.classList.add("dark-mode");
+        }
+      };
+    </script>
+
+    
+        <script>
+      // Ativa ou desativa dark mode e guarda no localStorage
+      function togglePinkMode() {
+        document.body.classList.toggle("pink-mode");
+        const isDark = document.body.classList.contains("pink-mode");
+        localStorage.setItem("pink-mode", isPink);
+      }
+
+      // Aplica dark mode ao carregar a página se estiver guardado
+      window.onload = function () {
+        if (localStorage.getItem("pink-mode") === "true") {
+          document.body.classList.add("pink-mode");
         }
       };
     </script>

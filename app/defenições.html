@@ -30,6 +30,25 @@
     .dark-mode a.btn:hover {
       background-color: #444;
     }
+
+    body.pink-mode {
+      background-color: #3e112c;
+      color: #ffffff;
+    }
+
+    .pink-mode .card {
+      background-color: #631348;
+      color: #ffffff;
+    }
+
+    .pink-mode a.btn {
+      background-color: #b05b96;
+      border-color: #c988b9;
+    }
+
+    .pink-mode a.btn:hover {
+      background-color: #c988b9;
+    }
   </style>
   
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -70,11 +89,11 @@
       </div>
 
       <div class="card" style="width: 18rem; margin-top: 150px; margin-left: 100px;">
-        <img src="https://npr.brightspotcdn.com/a3/c0/29c4ccdb4f1faacb8c5f0a4defd3/adobestock-238657363.jpeg" class="card-img-top" alt="...">
+        <img src="https://img.elo7.com.br/product/zoom/4494F2F/painel-paisagem-rosa-11-2-00x1-50-paisagem.jpg" class="card-img-top" alt="...">
           <div class="card-body">
-            <h5 class="card-title">Dark Mode</h5>
+            <h5 class="card-title">Pink Mode</h5>
             <p class="card-text">Menos brilho, mais estilo. Descansa os olhos e navega com classe.</p>
-            <a href="#" class="btn btn-primary" onclick="toggleDarkMode()">Dark Mode</a>
+            <a href="#" class="btn btn-primary" onclick="togglePinkMode()">Pink Mode</a>
           </div>
       </div>
       <div class="card" style="width: 18rem; margin-top: 150px; margin-left: 100px;">
@@ -99,6 +118,22 @@
       window.onload = function () {
         if (localStorage.getItem("dark-mode") === "true") {
           document.body.classList.add("dark-mode");
+        }
+      };
+    </script>
+
+        <script>
+      // Ativa ou desativa dark mode e guarda no localStorage
+      function togglePinkMode() {
+        document.body.classList.toggle("pink-mode");
+        const isDark = document.body.classList.contains("pink-mode");
+        localStorage.setItem("pink-mode", isPink);
+      }
+
+      // Aplica dark mode ao carregar a página se estiver guardado
+      window.onload = function () {
+        if (localStorage.getItem("pink-mode") === "true") {
+          document.body.classList.add("pink-mode");
         }
       };
     </script>
