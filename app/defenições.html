@@ -49,6 +49,26 @@
     .pink-mode a.btn:hover {
       background-color: #c988b9;
     }
+
+    body.orange-mode {
+      background-color: #8a3300;
+      color: #ffffff;
+    }
+
+    .orange-mode .card {
+      background-color: #b33c08;
+      color: #ffffff;
+    }
+
+    .orange-mode a.btn {
+      background-color: #c2562c;
+      border-color: #ff823f;
+    }
+
+    .orange-mode a.btn:hover {
+      background-color: #ff9437;
+    }
+
   </style>
   
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -97,11 +117,11 @@
           </div>
       </div>
       <div class="card" style="width: 18rem; margin-top: 150px; margin-left: 100px;">
-        <img src="https://npr.brightspotcdn.com/a3/c0/29c4ccdb4f1faacb8c5f0a4defd3/adobestock-238657363.jpeg" class="card-img-top" alt="...">
+        <img src="https://cdn.pixabay.com/photo/2023/02/21/07/12/sunset-7803651_1280.jpg" class="card-img-top" alt="...">
           <div class="card-body">
-            <h5 class="card-title">Dark Mode</h5>
+            <h5 class="card-title">Orange Mode</h5>
             <p class="card-text">Menos brilho, mais estilo. Descansa os olhos e navega com classe.</p>
-            <a href="#" class="btn btn-primary" onclick="toggleDarkMode()">Dark Mode</a>
+            <a href="#" class="btn btn-primary" onclick="toggleOrangeMode()">Orange Mode</a>
           </div>
       </div>
     </div>
@@ -122,21 +142,44 @@
       };
     </script>
 
-        <script>
-      // Ativa ou desativa dark mode e guarda no localStorage
-      function togglePinkMode() {
-        document.body.classList.toggle("pink-mode");
-        const isDark = document.body.classList.contains("pink-mode");
-        localStorage.setItem("pink-mode", isPink);
+    <script>
+      // Ativa modo e guarda no localStorage
+      function setTheme(themeName) {
+        // Limpa todos os temas primeiro
+        document.body.classList.remove("dark-mode", "pink-mode", "orange-mode");
+        // Aplica novo tema
+        if (themeName) {
+          document.body.classList.add(themeName);
+          localStorage.setItem("theme", themeName);
+        } else {
+          localStorage.removeItem("theme");
+        }
       }
 
-      // Aplica dark mode ao carregar a página se estiver guardado
+      function toggleDarkMode() {
+        const isActive = document.body.classList.contains("dark-mode");
+        setTheme(isActive ? null : "dark-mode");
+      }
+
+      function togglePinkMode() {
+        const isActive = document.body.classList.contains("pink-mode");
+        setTheme(isActive ? null : "pink-mode");
+      }
+
+      function toggleOrangeMode() {
+        const isActive = document.body.classList.contains("orange-mode");
+        setTheme(isActive ? null : "orange-mode");
+      }
+
+      // Aplica tema guardado ao carregar a página
       window.onload = function () {
-        if (localStorage.getItem("pink-mode") === "true") {
-          document.body.classList.add("pink-mode");
+        const savedTheme = localStorage.getItem("theme");
+        if (savedTheme) {
+          document.body.classList.add(savedTheme);
         }
       };
     </script>
+
   </body>
 </html>
 
