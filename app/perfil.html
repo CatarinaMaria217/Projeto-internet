@@ -22,6 +22,26 @@
     color: white;
     border: none; /* Slightly darker for hover effect */
   }
+
+    body.dark-mode {
+      background-color: #121212;
+      color: #ffffff;
+    }
+
+    .dark-mode .card {
+      background-color: #1e1e1e;
+      color: #ffffff;
+    }
+
+    .dark-mode a.btn {
+      background-color: #333;
+      border-color: #555;
+    }
+
+    .dark-mode a.btn:hover {
+      background-color: #444;
+    }
+
 </style>
 
 <body>
@@ -390,5 +410,21 @@
     });
 
     </script>
+
+    <script>
+  // Ativa ou desativa dark mode e guarda no localStorage
+  function toggleDarkMode() {
+    document.body.classList.toggle("dark-mode");
+    const isDark = document.body.classList.contains("dark-mode");
+    localStorage.setItem("dark-mode", isDark);
+  }
+
+  // Aplica dark mode ao carregar a página se estiver guardado
+  window.onload = function () {
+    if (localStorage.getItem("dark-mode") === "true") {
+      document.body.classList.add("dark-mode");
+    }
+  };
+</script>
 </body>
 </html>
