@@ -146,29 +146,47 @@
 
     /* 🍊 Orange mode */
     body.orange-mode .accordion-button {
-      background-color: #ffe5b4;
-      color: #8b4500;
+      background-color:  #c2562c;
+      color: #ffffff;
     }
 
     body.orange-mode .accordion-button:not(.collapsed) {
-      background-color: #ffcc80;
-      color: #8b4500;
+      background-color: #8a3300;
+      color: #ffffff;
     }
 
     body.orange-mode .accordion-body {
       background-color: #fff3e0;
       color: #8b4500;
-    } 
+    }
+    
+
+    
+
+    /* 🌸 Pink Mode */
+    body.pink-mode .accordion a {
+      color: #c2185b; /* Dark pink */
+      text-decoration: none;
+    }
+    body.pink-mode .accordion a:hover {
+      text-decoration: underline;
+    }
+
+    /* 🍊 Orange Mode */
+    body.orange-mode .accordion a {
+      color: #d35400; /* Dark orange */
+      text-decoration: none;
+    }
+    body.orange-mode .accordion a:hover {
+      text-decoration: underline;
+    }
 </style>
 
 <body>
   
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Organizer</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+      <span class="navbar-brand mb-0 h1">Organizer</span>
       <div class="collapse navbar-collapse" id="navbarText">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
