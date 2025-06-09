@@ -79,6 +79,63 @@
       background-color: #c2562c;
       border-color: #ff823f;
     }
+
+         /* Default color (light mode) */
+    .icon-links a i {
+      color: #212529;
+      transition: color 0.3s;
+    }
+
+    /* Dark Mode */
+    body.dark-mode .icon-links a i {
+      color: white;
+    }
+
+    /* Optional: Pink Mode */
+    body.pink-mode .icon-links a i {
+      color: #d63384;
+    }
+
+    /* Optional: Orange Mode */
+    body.orange-mode .icon-links a i {
+      color: #fd7e14;
+    }
+
+    /* Optional hover effect */
+    .icon-links a:hover i {
+      opacity: 0.8;
+    }
+
+    /* Base style */
+    .theme-button {
+      background-color: #6c757d; /* default (gray like btn-secondary) */
+      color: white;
+      border: none;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    /* Dark mode style */
+    body.dark-mode .theme-button {
+      background-color: #ffffff;
+      color: #212529;
+    }
+
+    /* Pink mode style */
+    body.pink-mode .theme-button {
+      background-color: #d63384;
+      color: white;
+    }
+
+    /* Orange mode style */
+    body.orange-mode .theme-button {
+      background-color: #fd7e14;
+      color: white;
+    }
+
+    /* Optional hover effect */
+    .theme-button:hover {
+      opacity: 0.85;
+    }
 </style>
 
 <body>
@@ -120,16 +177,16 @@
                 <div class="card-body">
                     <h5 class="card-title">Utilizador</h5>
                     <p class="card-text">Descrição Breve</p>
-                    <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                    <button type="button" class="btn theme-button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                         Editar
                     </button>
 
-                    <div class="position-absolute bottom-0 start-50 translate-middle-x mb-3 d-flex justify-content-center gap-3">
-                        <a href="https://github.com/" target="_blank" class="text-dark"><i class="bi bi-github fs-4"></i></a>
-                        <a href="https://getbootstrap.com" target="_blank" class="text-dark">
+                    <div class="position-absolute bottom-0 start-50 translate-middle-x mb-3 d-flex justify-content-center gap-3 icon-links">
+                        <a href="https://github.com/" target="_blank" ><i class="bi bi-github fs-4"></i></a>
+                        <a href="https://getbootstrap.com" target="_blank" >
                             <i class="bi bi-bootstrap fs-4"></i>
                         </a>
-                        <a href="#" data-bs-toggle="modal" data-bs-target="#myModal" class="text-dark"><i class="bi-question-circle fs-4"> </i></a>
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#myModal"><i class="bi-question-circle fs-4"> </i></a>
                     </div>
 
                     <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
