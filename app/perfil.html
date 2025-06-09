@@ -104,7 +104,7 @@
                 <a class="nav-link" href="index.html">Sair</a>
               </li>
             </ul>
-            <span class="navbar-text">
+            <span class="navbar-text" id="nome-usuário">
               Bem-vindo -Nome utilizador-
             </span>
           </div>
@@ -403,7 +403,7 @@
 
         // Verificar se já existe uma imagem armazenada ao carregar a página
         window.onload = function() {
-            const imagemArmazenada = localStorage.getItem('imagemPerfil_${username}', imagemURL);
+            const imagemArmazenada = localStorage.getItem(`imagemPerfil_${username}`, imagemURL);
             if (imagemArmazenada) {
                 fotoHome.src = imagemArmazenada;
                 fotoHome.style.display = 'block';  // Exibe a imagem armazenada
@@ -485,5 +485,7 @@
         }
       };
     </script>
+
+    
 </body>
 </html>
