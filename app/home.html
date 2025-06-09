@@ -110,7 +110,7 @@
             <a class="nav-link" href="index.html" onclick="logout()">Sair</a>
           </li>
         </ul>
-        <span class="navbar-text">
+        <span class="navbar-text" id="nome-usuário">
           Bem-vindo -Nome utilizador-
         </span>
       </div>
@@ -530,27 +530,34 @@
     </script>
 
     <script>
+      document.addEventListener("DOMContentLoaded", function () {
         // Verifica se o usuário está logado
         if (localStorage.getItem("userLogged") !== "true") {
-            alert("Você precisa fazer login primeiro!");
-            window.location.href = "index.html"; // Redireciona para o login
+          alert("Você precisa fazer login primeiro!");
+          window.location.href = "index.html"; // Redireciona para o login
+          return; // Importante para parar o código aqui
         }
 
-        var username = localStorage.getItem("username");
-        document.getElementById("nome-usuário").textContent = username;
-
-        function logout() {
-        localStorage.removeItem("userLogged");
-        localStorage.removeItem("username");  // Remove o nome de usuário ao deslogar
-        window.location.href = "index.html"; // Redireciona para a página de login
+        const username = localStorage.getItem("username");
+        const nomeUsuarioEl = document.getElementById("nome-usuário");
+        if (nomeUsuarioEl && username) {
+          nomeUsuarioEl.textContent = username;
         }
 
-        var fotoPerfil = localStorage.getItem(`imagemPerfil_${username}`);
-        if (fotoPerfil) {
-            document.getElementById("foto-perfil").src = fotoPerfil;
-            document.getElementById("foto-perfil").style.display = "block"; // Torna a foto visível
+        const fotoPerfilEl = document.getElementById("foto-perfil");
+        const fotoPerfil = localStorage.getItem(`imagemPerfil_${username}`);
+        if (fotoPerfilEl && fotoPerfil) {
+          fotoPerfilEl.src = fotoPerfil;
+          fotoPerfilEl.style.display = "block"; // Torna a foto visível
         }
 
+        // Função de logout
+        window.logout = function () {
+          localStorage.removeItem("userLogged");
+          localStorage.removeItem("username");
+          window.location.href = "index.html";
+        };
+      });
     </script>
 
     <script>

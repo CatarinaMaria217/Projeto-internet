@@ -92,7 +92,7 @@
             <a class="nav-link" href="index.html">Sair</a>
           </li>
         </ul>
-        <span class="navbar-text">
+        <span class="navbar-text" id="nome-usuário">
           Bem-vindo -Nome utilizador-
         </span>
       </div>
@@ -178,6 +178,37 @@
           document.body.classList.add(savedTheme);
         }
       };
+    </script>
+
+        <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Verifica se o usuário está logado
+        if (localStorage.getItem("userLogged") !== "true") {
+          alert("Você precisa fazer login primeiro!");
+          window.location.href = "index.html"; // Redireciona para o login
+          return; // Importante para parar o código aqui
+        }
+
+        const username = localStorage.getItem("username");
+        const nomeUsuarioEl = document.getElementById("nome-usuário");
+        if (nomeUsuarioEl && username) {
+          nomeUsuarioEl.textContent = username;
+        }
+
+        const fotoPerfilEl = document.getElementById("foto-perfil");
+        const fotoPerfil = localStorage.getItem(`imagemPerfil_${username}`);
+        if (fotoPerfilEl && fotoPerfil) {
+          fotoPerfilEl.src = fotoPerfil;
+          fotoPerfilEl.style.display = "block"; // Torna a foto visível
+        }
+
+        // Função de logout
+        window.logout = function () {
+          localStorage.removeItem("userLogged");
+          localStorage.removeItem("username");
+          window.location.href = "index.html";
+        };
+      });
     </script>
 
   </body>
