@@ -85,6 +85,32 @@
     .orange-mode a.btn:hover {
       background-color: #ff9437;
     }
+
+     /* Default color (light mode) */
+    .icon-links a i {
+      color: #212529;
+      transition: color 0.3s;
+    }
+
+    /* Dark Mode */
+    body.dark-mode .icon-links a i {
+      color: white;
+    }
+
+    /* Optional: Pink Mode */
+    body.pink-mode .icon-links a i {
+      color: #d63384;
+    }
+
+    /* Optional: Orange Mode */
+    body.orange-mode .icon-links a i {
+      color: #fd7e14;
+    }
+
+    /* Optional hover effect */
+    .icon-links a:hover i {
+      opacity: 0.8;
+    }
 </style>
 
 <body>
@@ -132,12 +158,12 @@
             <ul id="linksList" class="list-group mb-3 mt-2"></ul>
           </div>
         </div>
-        <div class="d-flex justify-content-center gap-3" style="padding-bottom: 20px;">
-          <a href="https://github.com/" target="_blank" class="text-dark"><i class="bi bi-github fs-4"></i></a>
-          <a href="https://getbootstrap.com" target="_blank" class="text-dark">
+        <div class="d-flex justify-content-center gap-3 icon-links" style="padding-bottom: 20px;">
+          <a href="https://github.com/" target="_blank" ><i class="bi bi-github fs-4"></i></a>
+          <a href="https://getbootstrap.com" target="_blank" >
               <i class="bi bi-bootstrap fs-4"></i>
           </a>
-          <a href="#" data-bs-toggle="modal" data-bs-target="#myModal" class="text-dark"><i class="bi-question-circle fs-4"></i></a>
+          <a href="#" data-bs-toggle="modal" data-bs-target="#myModal" ><i class="bi-question-circle fs-4"></i></a>
         </div>
         <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
           <div class="modal-dialog">
